@@ -7,6 +7,22 @@ from src.number_checker import check_number
 def step_given_number(context):
     context.number = 4
 
+@given('the number is 5')
+def step_given_number(context):
+    context.number = 5
+
+@given('the number is 0')
+def step_given_number(context):
+    context.number = 0
+
+@given('the number is -4')
+def step_given_number(context):
+    context.number = -4
+
+@given('the number is -5')
+def step_given_number(context):
+    context.number = -5
+
 # TODO: Implementáld a When step-et
 # Használd a check_number függvényt a src/number_checker.py fájlból!
 @when('I check the number')
