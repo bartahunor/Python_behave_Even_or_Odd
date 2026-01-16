@@ -2,32 +2,15 @@ Feature: Páros szám ellenőrzése
 
   # TODO: Írd ide a scenariókat!
 
-# 1. Páros szám ellenőrzése (pl. 4)
-Scenario: Páros szám ellenőrzése
-  Given the number is 4
+Scenario Outline: Checking the number is even or odd
+  Given the number is "<number>"
   When I check the number
-  Then I should be told "even"
+  Then I should be told "<answer>"
 
-# 2. Páratlan szám ellenőrzése (pl. 5)
-Scenario: Páratlan szám ellenőrzése
-    Given the number is 5
-    When I check the number
-    Then I should be told "odd"
-
-# 3. Nulla ellenőrzése (0)
-Scenario: Nulla ellenőrzése
-  Given the number is 0
-  When I check the number
-  Then I should be told "even"
-
-# 4. Negatív páros szám ellenőrzése (-4)
-Scenario: Negatív páros szám ellenőrzése
-  Given the number is -4
-  When I check the number
-  Then I should be told "even"
-
-# 5. Negatív páratlan szám ellenőrzése (-5)
-Scenario: Páratlan szám ellenőrzése
-    Given the number is -5
-    When I check the number
-    Then I should be told "odd"
+Examples:
+| number | answer |
+| 4 | even |
+| 5 | odd |
+| 0 | even |
+| -4 | even |
+| -5 | odd |
